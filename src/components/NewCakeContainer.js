@@ -3,12 +3,12 @@ import { connect } from "react-redux";
 import { buyCake } from "../redux/cake/cakeActions";
 
 function NewCakeContainer(props) {
-  const [number, setNumber] = useState(0);
+  const [number, setNumber] = useState(1);
   return (
     <div>
       <h2>Number Of Cakes - {props.numberOfCakes}</h2>
       <input
-        type="text"
+        type="number"
         value={number}
         onChange={(e) => setNumber(e.target.value)}
       />
@@ -19,7 +19,7 @@ function NewCakeContainer(props) {
 
 const mapStateToProps = (state) => {
   return {
-    numberOfCakes: state.numberOfCakes,
+    numberOfCakes: state.cake.numberOfCakes,
   };
 };
 
